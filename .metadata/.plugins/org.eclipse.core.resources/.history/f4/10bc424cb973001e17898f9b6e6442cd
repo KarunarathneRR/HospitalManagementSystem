@@ -1,0 +1,33 @@
+package register;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class patientdbutill {
+
+	 public static boolean insertpatient(String firstname, String surname, String gender, String address, String email, String connumber,
+				String username, String password) {
+	    	boolean isSuccess = false;
+	    	
+	    	try {
+	    		Connection con = DBconnect.getConnection();
+	    		Statement stmt = (Statement) con.createStatement();
+	    	    String sql = "insert into customer values (0,'"+firstname+"','"+surname+"','"+gender+"','"+address+"','"+email+"','"+connumber+"','"+username+"','"+password+"')";
+	    		int rs = stmt.executeUpdate(sql);
+	    		
+	    		if(rs > 0) {
+	    			isSuccess = true;
+	    		} else {
+	    			isSuccess = false;
+	    		}
+	    		
+	    	}
+	    	catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
+	 	
+	    	return isSuccess;
+	    }
+	    
+}

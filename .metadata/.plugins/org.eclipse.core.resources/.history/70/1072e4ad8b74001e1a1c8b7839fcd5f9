@@ -1,0 +1,42 @@
+package appointment;
+
+import java.util.Date;
+
+public class appointment {
+
+	String patientId;
+	String appointmentId;
+	String doctor;
+	Date date;
+	public appointment(String patientId, String appointmentId) {
+	
+		this.patientId = patientId;
+		this.appointmentId = appointmentId;
+	}
+	public String getPatientId() {
+		return patientId;
+	}
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
+	}
+	public String getAppointmentId() {
+		return appointmentId;
+	}
+	public void setAppointmentId(String appointmentId) {
+		this.appointmentId = appointmentId;
+	}
+	public String getDoctor() {
+		return doctor;
+	}
+	public void setDoctor(String doctor) {
+		this.doctor = doctor;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+
+}

@@ -1,0 +1,100 @@
+package appointment;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import register.DBconnect;
+
+
+public class appointmentdbutill {
+
+	private static boolean isSuccess;
+	private static Connection con = null;
+	private static Statement stmt = null;
+	private static ResultSet rs = null;
+	
+	public static boolean insertpatient(String pname, String doctor, String date) {
+    	isSuccess = false;
+    	
+    	try {
+    		con = DBconnect.getConnection();
+    		stmt =con.createStatement();
+    	    String sql = "insert into appointment values (0,'"+pname+"','"+doctor+"','"+date+"')";
+    		int rs = stmt.executeUpdate(sql);
+    		
+    		if(rs > 0) {
+    			isSuccess = true;
+    		} else {
+    			isSuccess = false;
+    		}
+    		
+    	}
+    	catch (Exception e) {
+    		e.printStackTrace();
+    	}
+ 	
+    	return isSuccess;
+    }
+	
+
+    public static List<appointment> getappiontmentdetails(String pname,String doctor,String date) {
+    	
+    	int patientId1 = Integer.parseInt(patientId);
+    	int appointmentId1 = Integer.parseInt(appointmentId);
+    	
+    	ArrayList<appointment> ap = new ArrayList<>();
+    	
+    	try {
+    		
+    		con = DBconnect.getConnection();
+    		stmt = con.createStatement();
+    		String sql = "select * from appointment where patientId='"+patientId1+"' and appointmentId='"+appointmentId1+"'";
+    		rs = stmt.executeQuery(sql);
+    		
+    		while(rs.next()) {
+    			
+    			String Doctor = rs.getString(1);
+    			Date Date = rs.getDate(2);
+    			
+    			
+    			appointment a = new appointment();
+    			ap.add(a);
+    		}
+    		
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}	
+    	return ap;	
+    }
+    
+public static boolean updatecustomer(String pname, String dname, String date) {
+    	
+    	try {
+    		
+    		con = DBconnect.getConnection();
+    		stmt = con.createStatement();
+    		String sql = "update appointment set patientname='"+pname+"',doctor='"+dname+"',date='"+date+"' where appointmentid='"+appointmentId+"'";
+    				
+    		int rs = stmt.executeUpdate(sql);
+    		
+    		if(rs > 0) {
+    			isSuccess = true;
+    		}
+    		else {
+    			isSuccess = false;
+    		}
+    		
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    	return isSuccess;
+    }
+
+}

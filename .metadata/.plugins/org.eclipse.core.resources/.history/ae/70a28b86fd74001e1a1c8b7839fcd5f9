@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="javax.servlet.http.HttpSession" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+</head>
+<body>
+    <%
+        HttpSession se = request.getSession();
+
+        se.invalidate();
+    %>
+    <p>You have been successfully logged out.</p>
+    <p><a href="login.jsp">Login Again</a></p>
+</body>
+</html>

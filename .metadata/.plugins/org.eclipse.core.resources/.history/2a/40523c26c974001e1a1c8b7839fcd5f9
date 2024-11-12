@@ -1,0 +1,116 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Manage Appointments</title>
+    <style>
+    
+     {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: #333;
+        margin: 20px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: #fff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .edit-button {
+        margin-right: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .delete-button {
+        background-color: #FF0000;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+	<%@ include file="header.jsp" %>
+    <h1>Manage Appointments</h1>
+    
+    <!-- Display a list of appointments with options to manage them -->
+    <table>
+        <tr>
+            <th>Doctor</th>
+            <th>Patient</th>
+            <th>Appointment Date</th>
+            <th>Action</th>
+        </tr>
+      
+        <tr>
+            <td>Doctor's Name</td>
+            <td>Patient's Name</td>
+            <td>Appointment Date</td>
+            <td class="button-container">
+                <a href="editAppointment.jsp" class="edit-button">Edit</a>
+                <a href="deleteAppointmentServlet" class="delete-button">Delete</a>
+            </td>
+        </tr>
+        
+    </table>
+   
+	<footer style="font-size:10px">
+        &copy; 2023 MedicarePro Hospital Management System
+    </footer>
+</body>
+</html>

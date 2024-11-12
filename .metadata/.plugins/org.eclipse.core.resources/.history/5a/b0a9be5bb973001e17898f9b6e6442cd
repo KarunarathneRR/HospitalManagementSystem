@@ -1,0 +1,42 @@
+package register;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/registerservlet")
+public class registerservlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String firstname=request.getParameter("firstName");
+		String surname=request.getParameter("surname");
+		String gender=request.getParameter("gender");
+		String address=request.getParameter("address");
+		String emaile=request.getParameter("email");
+		String contactNumber=request.getParameter("contactNumber");
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
+		
+boolean isTrue;
+		
+		isTrue = patientdbutill.insertpatient(firstname, surname, gender, address, emaile, contactNumber, username, password);
+		
+		if(isTrue == true) {
+			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
+			dis.forward(request, response);
+		} else {
+			RequestDispatcher dis2 = request.getRequestDispatcher("reregister.jsp");
+			dis2.forward(request, response);
+		}
+		
+	}
+
+}

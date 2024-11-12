@@ -1,0 +1,9 @@
+package appointment;
+
+public class adminmaangeappointment {
+
+	public adminmaangeappointment() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

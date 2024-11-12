@@ -1,0 +1,37 @@
+package appointment;
+
+import java.util.Date;
+
+public class adminmaangeappointment {
+	String patientId;
+	String doctor;
+	Date date;
+	public adminmaangeappointment(String patientId, String doctor, Date date) {
+		
+		this.patientId = patientId;
+		this.doctor = doctor;
+		this.date = date;
+	}
+	public String getPatientId() {
+		return patientId;
+	}
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
+	}
+	public String getDoctor() {
+		return doctor;
+	}
+	public void setDoctor(String doctor) {
+		this.doctor = doctor;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+
+	
+
+}

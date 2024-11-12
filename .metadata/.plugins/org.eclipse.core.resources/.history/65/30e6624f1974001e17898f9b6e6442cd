@@ -1,0 +1,9 @@
+package appointment;
+
+public class appointment {
+
+	public appointment() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,136 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Manage Appointments</title>
+    <style>
+    
+     {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: #333;
+        margin: 20px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: #fff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .edit-button {
+        margin-right: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .delete-button {
+        background-color: #FF0000;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+	<%@ include file="header.jsp" %>
+    <h1>Edit Appointments</h1>
+    
+    <form action="registerservlet" method="post">
+        <div class="form-col">
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" required><br>
+            
+            <label for="surname">Surname:</label>
+            <input type="text" name="surname" required><br>
+            
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+            
+            <label for="address">Address:</label>
+            <textarea name="address" rows="4" required></textarea><br>
+            
+           
+        </div>
+        <div class="form-col">
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+            
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" name="contactNumber" required><br>
+            
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br>
+            
+           
+        </div>
+        
+        <br>
+        <input type="submit" value="Register">
+        <p style="font-size: 13px">Already have an account <a href="login.jsp" style="color: #007BFF">Login</a></p>
+    </form>
+   
+	<footer style="font-size:10px">
+        &copy; 2023 MedicarePro Hospital Management System
+    </footer>
+</body>
+</html>

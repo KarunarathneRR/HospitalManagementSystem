@@ -1,0 +1,9 @@
+package appointment;
+
+public class DBconnect {
+
+	public DBconnect() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
